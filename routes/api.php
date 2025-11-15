@@ -9,6 +9,10 @@ require_once "controllers/UserController.php";
 require_once "controllers/AuthController.php";
 require_once "controllers/VehiculoController.php";
 
+$db = new Database();
+$pdo = $db->connect();
+
+
 $controller = $_GET['controller'] ?? null;
 $action = $_GET['action'] ?? null;
 
@@ -20,10 +24,10 @@ if(!$controller || !$action)
 }
 
 switch ($controller) {
-    case 'usuarios': $c = new UserController(); break;
-    case 'auth': $c = new AuthController(); break;
-    case 'vehiculos': $c = new VehicleController(); break;
-    case 'reservas': $c = new BookingController(); break;
+    case 'usuarios': $c = new UserController($pdo); break;
+    case 'auth': $c = new AuthController($pdo); break;
+    case 'vehiculos': $c = new VehicleController($pdo); break;
+    case 'reservas': $c = new BookingController($pdo); break;
     default:
         echo json_encode(["error"=>"No se encontro el controlador"]); exit;
 }

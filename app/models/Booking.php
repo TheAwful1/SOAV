@@ -24,13 +24,39 @@ public function verTodos(){
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
-  public function buscar($fechaInicio){
-    $stmt = $this->pdo->prepare( "SELECT * FROM reservaciones WHERE fecha_inicio = ?");
-    $stmt->execute([$fechaInicio]);
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+  public function buscar($fechaInicio = null, $nombreArrendador = null, $matricula = null)
+  {
+      $sql = "
+          SELECT r.*, u.nombre AS nombre_usuario, v.matricula
+          FROM reservaciones r
+          INNER JOIN usuarios u ON r.id_usuario = u.id
+          INNER JOIN vehiculos v ON r.id_vehiculo = v.id
+          WHERE 1 = 1
+      ";
   
+      $params = [];
+  
+      if ($fechaInicio !== null) {
+          $sql .= " AND r.fecha_inicio = ? ";
+          $params[] = $fechaInicio;
+      }
+  
+      if ($nombreArrendador !== null) {
+          $sql .= " AND u.nombre LIKE ? ";
+          $params[] = "%$nombreArrendador%";
+      }
+  
+      if ($matricula !== null) {
+          $sql .= " AND v.matricula LIKE ? ";
+          $params[] = "%$matricula%";
+      }
+  
+      $stmt = $this->pdo->prepare($sql);
+      $stmt->execute($params);
+  
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
-  
+    
   public function editar($fechaInicio, $fechafinal,$id){
     $stmt = $this->pdo->prepare("UPDATE reservaciones SET fecha_inicio WHERE id = ?");
     return $stmt->execute([$fechaInicio,$fechafinal]);
