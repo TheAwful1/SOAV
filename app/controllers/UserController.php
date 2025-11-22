@@ -2,10 +2,18 @@
 class UserController 
 {    
 private Usuario $modelo;
- 
+
 public function __construct(PDO $pdo) {
 $this->modelo = new Usuario($pdo);
 }
+
+
+public function formularioRegistro() {//Aqui esta el ejemplo del codigo que se debe poner en los controladores para que funcione el layout
+    View::render("usuarios/crear", [
+        "title" => "Registrar nuevo usuario"
+    ]);
+}
+
 
 
 public function crear(): void{

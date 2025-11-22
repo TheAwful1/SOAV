@@ -1,17 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina de Inicio</title>
+    <title>SOAV-Detalles Vehiculo</title>
 </head>
 <body>
-    <?php
-echo "Blah";
 
 
-?>
-<script src="public/js/app.js"></script>
+    <script src="public/js/vehiculos/buscar.js"></script>
 </body>
 </html>

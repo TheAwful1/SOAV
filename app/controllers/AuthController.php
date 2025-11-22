@@ -1,11 +1,10 @@
 <?php
 class AuthController 
 {    
-private $modelo;
+private Usuario $modelo;
 
-public function __construct() {
-$db = new Database();
-$this->user = new Usuario($db);
+public function __construct(PDO $pdo) {
+$this->modelo = new Usuario($pdo);
 }
 
 public function login(){}
