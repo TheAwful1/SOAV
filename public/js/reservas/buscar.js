@@ -1,7 +1,9 @@
 const nombre = document.getElementById("Nombre");
 const contraseña = document.getElementById("Contraseña");
 const correo = document.getElementById("Correo");
-const url = "http://localhost/miapp/api.php?controller=User&action=buscar";
+//Lo mismo aqui sobre añadir los campos de las reservas
+
+const url = "http://localhost/miapp/api.php?controller=Booking&action=buscar";
 try {
 const response = await fetch(url);
 if(!response.ok){

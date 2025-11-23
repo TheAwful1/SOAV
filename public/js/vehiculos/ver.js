@@ -1,4 +1,4 @@
-const url = "http://localhost/miapp/api.php?controller=User&action=listar";
+const url = "http://localhost/miapp/api.php?controller=Vehiculo&action=listar";
 try {
 const response = await fetch(url);
 if(!response.ok){

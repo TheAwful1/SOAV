@@ -1,10 +1,10 @@
-document.getElementById("formEditarUsuario").addEventListener("submit",e => {e.preventDefault();})
+document.getElementById("formEditarVehiculo").addEventListener("submit",e => {e.preventDefault();})
 
 const data ={
   id: e.target.id.value,
 };
 
-fetch("http://localhost/miapp/api.php?controller=User&action=eliminar",{
+fetch("http://localhost/miapp/api.php?controller=Vehicle&action=eliminar",{
   method: "POST",
   headers:{ "Content-Type": "application/json" },
   body: JSON.stringify(data)

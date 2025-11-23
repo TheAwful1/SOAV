@@ -1,4 +1,4 @@
-document.getElementById("formRegistro").addEventListener("submit",e => {e.preventDefault();})
+document.getElementById("formAñadir").addEventListener("submit",e => {e.preventDefault();})
 
 const data ={
   nombre: e.target.nombre.value,
@@ -6,7 +6,7 @@ const data ={
   password: e.target.email.value
 };
 
-fetch("http://localhost/miapp/api.php?controller=User&action=registrar",{
+fetch("http://localhost/miapp/api.php?controller=Booking&action=crear",{
   method: "POST",
   headers:{ "Content-Type": "application/json" },
   body: JSON.stringify(data)
