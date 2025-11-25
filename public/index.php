@@ -1,17 +1,11 @@
+<?php
+require_once __DIR__ . "/../app/controllers/HomeController.php";
+require_once __DIR__ . "/../core/View.php";
+require_once __DIR__ . "/../app/config/database.php";
+$controller = $_GET["controller"] ?? "home";
+$action = $_GET["action"] ?? "index";
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina de Inicio</title>
-</head>
-<body>
-    <?php
-echo "Blah";
+$controllerName = ucfirst($controller) . "Controller";
 
-
-?>
-<script src="public/js/app.js"></script>
-</body>
-</html>
+$c = new $controllerName();
+$c->$action();
