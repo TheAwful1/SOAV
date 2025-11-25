@@ -8,9 +8,10 @@ class View {//Para que esto funcione tienes que añadir codigo a los controlador
 
         // Captura el contenido de la vista
         ob_start();
-        require "views/$viewPath.php";
+        require_once __DIR__ . "/../views/$viewPath.php";
         $content = ob_get_clean();
 
-        require "views/shared/layout.php";
+        require_once __DIR__ . "/../views/shared/layout.php";
     }
 }
+?>

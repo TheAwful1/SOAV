@@ -9,3 +9,4 @@ $controllerName = ucfirst($controller) . "Controller";
 
 $c = new $controllerName();
 $c->$action();
+?>
