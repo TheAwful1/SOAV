@@ -9,11 +9,10 @@ $this->modelo = new Usuario($pdo);
 
 
 public function formularioRegistro() {//Aqui esta el ejemplo del codigo que se debe poner en los controladores para que funcione el layout
-    View::render("usuarios/crear", [
-        "title" => "Registrar nuevo usuario"
+    View::render("usuarios/buscar", [
+        "title" => "Mi cuenta"
     ]);
 }
-
 
 
 public function crear(): void{

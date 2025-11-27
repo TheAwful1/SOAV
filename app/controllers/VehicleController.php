@@ -8,6 +8,11 @@ public function __construct(PDO $pdo) {
 $this->modelo = new Vehicle($pdo);
 }
 
+public function index() {
+    View::render("vehiculos/ver", [
+        "title" => "Registrar nuevo vehiculo"
+    ]);
+}
 
 public function crear(): void{
     $json = file_get_contents("php://input");

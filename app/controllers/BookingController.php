@@ -8,6 +8,9 @@ public function __construct(PDO $pdo) {
 $this->modelo = new Booking($pdo);
 }
 
+public function index() {
+    View::render("home");
+}
 
 public function crear(): void{
     $json = file_get_contents("php://input");
