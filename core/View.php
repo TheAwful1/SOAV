@@ -1,6 +1,6 @@
 <?php
 
-class View {//Para que esto funcione tienes que añadir codigo a los controladores,
+class View {//Para que esto funcione tienes que añadir codigo a los controladores
     public static function render($viewPath, $params = []) {
 
         // Extrae variables en el scope local

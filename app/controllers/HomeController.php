@@ -1,5 +1,5 @@
 <?php
-class HomeController {
+class HomeController {//Como este codigo
     public function index() {
         View::render("home");
     }
