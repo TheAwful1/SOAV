@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?= $title ?? "Mi Aplicación" ?></title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/SOAV/public/css/styles.css">
 </head>
 
 <body>

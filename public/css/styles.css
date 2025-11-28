@@ -1,51 +1,110 @@
-.titulo-dashboard {
-    text-align: center;
-    margin-bottom: 20px;
+/* ==== RESET ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.bienvenida {
-    background: #f4f4f8;
-    padding: 15px;
-    border-radius: 10px;
+/* ==== GLOBAL ==== */
+body {
+    font-family: "Inter", sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
 }
 
-.accesos-rapidos .grid-access {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-top: 10px;
+header {
+    background: #2563eb;
+    color: white;
+    padding: 1rem 2rem;
 }
 
-.card.acceso {
+nav {
     background: white;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
+    padding: 0.8rem 2rem;
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+nav a {
     text-decoration: none;
-    color: black;
+    color: #1e293b;
+    font-weight: 500;
+}
+
+/* ==== HERO ==== */
+.hero {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: white;
+    color: #2563eb;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
     transition: 0.2s;
 }
 
-.card.acceso:hover {
-    transform: scale(1.05);
+.btn-primary:hover {
+    background: #e2e8f0;
 }
 
-.estadisticas .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 20px;
-    gap: 15px;
-}
-
-.stat-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
+/* ==== FEATURES ==== */
+.features {
+    padding: 3rem 2rem;
     text-align: center;
-    border: 1px solid #ddd;
 }
 
-.stat-card .numero {
-    font-size: 30px;
-    font-weight: bold;
+.features-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+/* ==== ABOUT ==== */
+.about {
+    padding: 3rem 2rem;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.7rem;
+}
+
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-top: 1px solid #e2e8f0;
 }

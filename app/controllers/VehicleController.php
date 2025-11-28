@@ -73,7 +73,7 @@ public function editar(){//Tendre que crear una funcion aparte para que los clie
     $matricula = $data['matrticula'] ?? null;
     $precio = $data['precio'] ?? null;
     $disponibilidad = $data['disponibilidad'] ?? null;
-    $result = $this->modelo->editar($marca, $modelo, $matricula, $precio, $disponibilidad);
+    $result = $this->modelo->editar($marca, $modelo, $matricula, $precio, $disponibilidad,$id);
     echo json_encode($result);
 
 }
