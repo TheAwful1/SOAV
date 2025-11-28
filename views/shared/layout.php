@@ -9,7 +9,7 @@
 <body>
 
 <header>
-    <h1>Mi Sistema</h1>
+    <h1>SOAV</h1>
 </header>
 
 <nav>

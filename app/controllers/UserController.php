@@ -7,12 +7,24 @@ public function __construct(PDO $pdo) {
 $this->modelo = new Usuario($pdo);
 }
 
-
-public function formularioRegistro() {//Aqui esta el ejemplo del codigo que se debe poner en los controladores para que funcione el layout
-    View::render("usuarios/buscar", [
+public function Admin() {
+    View::render("User/ver", [
         "title" => "Mi cuenta"
     ]);
 }
+public function Cuenta() {//Aqui esta el ejemplo del codigo que se debe poner en los controladores para que funcione el layout
+    View::render("User/buscar", [
+        "title" => "Mi cuenta"
+    ]);
+}
+public function index() {
+    View::render("Admin/usuarios", [
+        "title" => "Ver Usuarios"
+    ]);
+}
+
+
+
 
 
 public function crear(): void{

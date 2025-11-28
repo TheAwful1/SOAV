@@ -6,8 +6,13 @@ private Usuario $modelo;
 public function __construct(PDO $pdo) {
 $this->modelo = new Usuario($pdo);
 }
-public function index() {
-    View::render("usuarios/crear", [
+public function ViewRegister() {
+    View::render("User/register", [
+        "title" => "Registrar nuevo usuario"
+    ]);
+}
+public function ViewLogin() {
+    View::render("User/login", [
         "title" => "Registrar nuevo usuario"
     ]);
 }
