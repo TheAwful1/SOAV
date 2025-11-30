@@ -10,13 +10,12 @@
 
 <header>
     <h1>SOAV</h1>
-
 </header>
 
 <nav>
-    <a href="#">Inicio</a>
-    <a href="usuarios/login">Iniciar Sesion</a>
-    <a href="usuarios/register">Registrarme</a>
+    <a href="public/index.php">Inicio</a>
+    <a href="/views/User/login.php">Iniciar Sesion</a>
+    <a href="/views/User/register.php">Registrarme</a>
 </nav>
 
 <main>
@@ -27,6 +26,6 @@
     <p>© 2025 - Awful Industries</p>
 </footer>
 
-<script src="/js/routes/api.php"></script>
+
 </body>
 </html>

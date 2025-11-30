@@ -7,8 +7,7 @@
         </p>
 
         <div class="hero-actions">
-            <a href="/register" class="btn btn-primary">Quiero rentar un vehículo</a>
-            <a href="/register" class="btn btn-secondary">Quiero publicar mi vehículo</a>
+            <a href="/register" class="btn btn-primary">Empezar</a>
         </div>
     </div>
 </section>
