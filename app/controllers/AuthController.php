@@ -7,14 +7,27 @@ public function __construct(PDO $pdo) {
 $this->modelo = new Usuario($pdo);
 }
 public function ViewRegister() {
-    View::render("User/register", [
-        "title" => "Registrar nuevo usuario"
-    ]);
+    $isAjax = isset($_GET['ajax']);
+     if ($isAjax) {
+        View::renderPartial("User/register", [
+            "title" => "Registrar nuevo usuario"
+        ]);
+    } else {
+        View::render("User/register", [
+            "title" => "Registrar nuevo usuario"
+        ]);
+    }
 }
 public function ViewLogin() {
-    View::render("User/login", [
-        "title" => "Registrar nuevo usuario"
-    ]);
+    $isAjax = isset($_GET['ajax']); if ($isAjax) {
+        View::renderPartial("User/login", [
+            "title" => "Inicia Sesion"
+        ]);
+    } else {
+        View::render("User/login", [
+            "title" => "Inicia Sesion"
+        ]);
+    }
 }
 
 public function login(){}

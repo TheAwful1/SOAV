@@ -9,17 +9,15 @@
 <body>
 
 <header>
-    <h1>SOAV</h1>
-
+<h1><a href="#" id="btnHome">SOAV</a></h1> <!-- Reemplazar con una imagen mas adelante-->
 </header>
 
 <nav>
-    <a href="#">Inicio</a>
-    <a href="usuarios/login">Iniciar Sesion</a>
-    <a href="usuarios/register">Registrarme</a>
+    <a href="#" id="btnLogin">Iniciar Sesion</a>
+    <a href="#" id="btnRegister">Registrarme</a>
 </nav>
 
-<main>
+<main id="content">
     <?= $content ?>   <!-- Aquí se inyecta la vista -->
 </main>
 
@@ -27,6 +25,6 @@
     <p>© 2025 - Awful Industries</p>
 </footer>
 
-<script src="/js/routes/api.php"></script>
+<script src="/SOAV/public/app.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@ const data ={
   password: e.target.email.value
 };
 
-fetch("http://localhost/miapp/api.php?controller=User&action=registrar",{
+fetch("http://localhost/SOAV/public/routes/api.php?controller=User&action=registrar",{
   method: "POST",
   headers:{ "Content-Type": "application/json" },
   body: JSON.stringify(data)
