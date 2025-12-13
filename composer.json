@@ -1,0 +1,21 @@
+{
+    "name": "awful/soav",
+    "description": "Sistema Online de Alquiler de Vehiculos",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Awful\\Soav\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Edwin Felipe",
+            "email": "105158452+TheAwful1@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "firebase/php-jwt": "^6.11"
+    }
+}
