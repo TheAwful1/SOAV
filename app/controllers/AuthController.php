@@ -1,6 +1,10 @@
 <?php
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+require_once __DIR__ . '/../helpers/jwt_helper.php';
 class AuthController 
 {    
+    
 private Usuario $modelo;
 
 public function __construct(PDO $pdo) {
@@ -30,7 +34,23 @@ public function ViewLogin() {
     }
 }
 
-public function login(){}
+public function login(){
+
+    $data = json_decode(file_get_contents("php://input"),true);
+    
+    $user = $this->modelo->buscarPorEmail($data['email']); 
+
+    if (!$user || !password_verify($data['password'], $user['password'])) {
+        http_response_code(401);
+        echo json_encode(['error' => 'Credenciales inválidas']);
+        return;
+    }
+    $token = JwtHelper::generate($user);
+
+    echo json_encode([
+        'token' => $token
+    ]);
+}
 public function logout(){}
 //De aqui en adelante estan las funciones del admin
 public function refreshTokens(){}

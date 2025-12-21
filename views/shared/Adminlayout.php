@@ -9,12 +9,15 @@
 <body>
 
 <header>
-<h1><a href="#" id="btnLandPage">SOAV</a></h1> <!-- Reemplazar con una imagen mas adelante-->
+<h1><a href="#" id="btnHome">SOAV</a></h1> <!-- Reemplazar con una imagen mas adelante-->
 </header>
 
 <nav>
-    <a href="#" id="btnCuenta">Mi cuenta</a>
-    <a href="#" id="btnReservas">Mis Reservas</a>
+    <a href="#" id="btnDashboard">Dashboard</a>
+    <a href="#" id="btnSolicitudes">Solicitudes</a>    
+    <a href="#" id="btnReportes">Reportes</a>    
+    <a href="#" id="btnSolicitudes">Usuarios</a>    <!--El admin tiene acceso a las reservas de la pagina de cada usuario -->
+    <a href="#" id="btnSolicitudes">Vehiculos</a>
 </nav>
 
 <main id="content">

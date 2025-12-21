@@ -8,15 +8,28 @@ class View {//Para que esto funcione tienes que añadir codigo a los controlador
 
         // Captura el contenido de la vista
         ob_start();
-        require_once __DIR__ . "/../views/$viewPath.php";
+        require __DIR__ . "/../views/$viewPath.php";
         $content = ob_get_clean();
 
-        if($useLayout){
-        require_once __DIR__ . "/../views/shared/layout.php";
-        }
-        else{
+        if(!$useLayout){
+
             echo $content;
+            return;
         }
+
+        $user = $GLOBALS['currentUser'] ?? null;
+
+        if (!$user) {
+            $layout = 'layout.php';
+        } elseif ($user['role'] === 'admin') {
+            $layout = 'Adminlayout.php';
+        } else {
+            $layout = 'logedlayout.php';
+        }
+        //Tienes que ver si vas a eliminar esta parte de abajo
+
+        require_once __DIR__ . "/../views/shared/".$layout;
+        
         
     }
     public static function renderPartial($viewPath, $params = []) {

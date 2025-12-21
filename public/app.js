@@ -8,18 +8,48 @@ function cargarVista(controller, action){
     .catch(err => console.error('Error', err));
 }
  
+function apiFetch(controller, action, options = {}) {
 
+    const token = localStorage.getItem('token');
 
-document.getElementById('btnLogin').addEventListener('click',()=>{
+    return fetch(`/SOAV/routes/api.php?controller=${controller}&action=${action}`, {
+        ...options,
+        headers: {
+            'Content-Type': 'application/json', 
+            ...(options.headers || {}),
+            ...(token && { 'Authorization': 'Bearer ' + token })
+        }
+    });
+}
+//apiFetch('Home', 'index')
+//    .then(res => res.text())
+//    .then(html => {
+//        document.getElementById('content').innerHTML = html;
+//    });
+//
+
+const btnLogin = document.getElementById('btnLogin');
+    if(btnLogin){
+        btnLogin.addEventListener('click',()=>{
+    
     cargarVista('Auth', 'ViewLogin');
-});
+    })
+}
 
-document.getElementById('btnRegister').addEventListener('click', () => {
+const btnRegister = document.getElementById('btnRegister');
+    if(btnRegister){
+        btnRegister.addEventListener('click',()=>{
+    
     cargarVista('Auth', 'ViewRegister');
-});
+    })
+}
 
-document.getElementById('btnHome').addEventListener('click', () => {
+const btnHome = document.getElementById('btnHome');
+    if(btnHome){
+        btnHome.addEventListener('click',()=>{
+    
     cargarVista('Home', 'index');
-});
+    })
+}
 
 

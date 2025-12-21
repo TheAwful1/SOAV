@@ -43,6 +43,12 @@ public function buscar($id){
 
 }
 
+public function buscarPorEmail($email){
+  $stmt = $this->pdo->prepare( "SELECT * FROM usuarios WHERE email = ?");
+  $stmt->execute([$email]);
+  return $stmt->fetch(PDO::FETCH_ASSOC);
+
+}
 public function editar($nombre, $email, $password, $rol, $id){
   $stmt = $this->pdo->prepare("UPDATE usuarios SET name = ?, email = ?, rol = ?, state = ? WHERE id = ?");
   return $stmt->execute([$nombre,$email,$rol,$id]);
