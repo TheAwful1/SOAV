@@ -9,20 +9,28 @@ class JwtHelper {
         $config = require __DIR__ . '/../config/jwt.php';
 
         $payload = [
-            'id' => $user['id'],
+            
+            'iss' => 'SOAV',
+            'iat' => time(),
+            'exp' => time() + $config['expire'],
+            'user'=>[
+                'id' => $user['id'],
             'email' => $user['email'],
             'role' => $user['role'],
-            'iat' => time(),
-            'exp' => time() + $config['expire']
+            ]
         ];
 
         return JWT::encode($payload, $config['secret'], $config['algo']);
     }
 
     public static function decode($token) {
+        try {
         $config = require __DIR__ . '/../config/jwt.php';
-
-        return JWT::decode($token, new Key($config['secret'], $config['algo']));
+        $decoded = JWT::decode($token, new Key($config['secret'], $config['algo']));
+        return (array) $decoded->user;
+    } catch (Exception $e) {
+        return null;
+    }
     }
 }
 ?>

@@ -13,8 +13,27 @@
 </header>
 
 <nav>
-    <a href="#" id="btnLogin">Iniciar Sesion</a>
-    <a href="#" id="btnRegister">Registrarme</a>
+ <?php if (!$user): ?>
+            <!-- GUEST -->
+            <a href="#" onclick="cargarVista('Auth','ViewLogin')">Iniciar sesión</a>
+            <a href="#" onclick="cargarVista('Auth','ViewRegister')">Registrarse</a>
+
+        <?php elseif ($user['role'] === 'user'): ?>
+            <!-- USER -->
+            <a href="#" onclick="cargarVista('User','account')">Mi cuenta</a>
+            <a href="#" onclick="cargarVista('Reservas','Reservar')">Reservar</a>
+            <a href="#" onclick="cargarVista('Payment','PagoVehiculo')">Pagos</a>
+            <a href="#" onclick="logout()">Cerrar sesión</a>
+
+        <?php elseif ($user['role'] === 'admin'): ?>
+            <!-- ADMIN -->
+            <a href="#" onclick="cargarVista('Admin','dashboard')">Dashboard</a>
+            <a href="#" onclick="cargarVista('Admin','vehicles')">Vehículos</a>
+            <a href="#" onclick="cargarVista('Admin','bookings')">Reservas</a>
+            <a href="#" onclick="cargarVista('Admin','usuarios')">Usuarios</a>
+            <a href="#" onclick="cargarVista('Admin','reports')">Reportes</a>
+            <a href="#" onclick="logout()">Cerrar sesión</a>
+        <?php endif; ?>
 </nav>
 
 <main id="content">

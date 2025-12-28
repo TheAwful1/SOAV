@@ -1,7 +1,7 @@
 <?php
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
-require_once __DIR__ .'/.../helpers/jwt_helper.php';
+require_once __DIR__ ."/../helpers/jwt_helper.php";
 class AuthMiddleware {
    
 

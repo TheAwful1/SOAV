@@ -7,6 +7,11 @@ function cargarVista(controller, action){
     })
     .catch(err => console.error('Error', err));
 }
+function logout(){
+    localStorage.removeItem('token');
+    document.getElementById('content').innerHTML = '';
+    cargarVista('Home', 'index');
+}
  
 function apiFetch(controller, action, options = {}) {
 
@@ -51,5 +56,6 @@ const btnHome = document.getElementById('btnHome');
     cargarVista('Home', 'index');
     })
 }
+
 
 
